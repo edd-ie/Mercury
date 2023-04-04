@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Material icons -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icons?family=Material+Icons">
+        <!-- <link rel="stylesheet" href="https://fonts.google.com/icons?family=Material+Icons"> -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,1,0" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
         <!-- fonts -->
@@ -56,39 +56,39 @@
                 </button>
                 
                 <div class="sidebar">
-                    <a href="#" class="active">
-                        <span class="material-symbols-sharp">dashboard</span>
-                        <h4>Dashboard</h4>
+                    <a href="#">
+                        <span class="material-symbols-sharp">currency_bitcoin</span>
+                        <h4>Crypto</h4>
                     </a>
                 </div>
                 <div class="sidebar">
                     <a href="#">
                         <span class="material-symbols-sharp">currency_exchange</span>
-                        <h4>Exchange</h4>
+                        <h4>Forex</h4>
                     </a>
                 </div>
                 <div class="sidebar">
                     <a href="#">
-                        <span class="material-symbols-sharp">account_balance_wallet</span>
-                        <h4>Wallet</h4>
+                        <span class="material-symbols-sharp">monitoring</span>
+                        <h4>Stocks</h4>
                     </a>
                 </div>
                 <div class="sidebar">
                     <a href="#">
-                        <span class="material-symbols-sharp">payment</span>
-                        <h4>Transaction</h4>
+                        <span class="material-symbols-sharp">store</span>
+                        <h4>Commodites</h4>
                     </a>
                 </div>
                 <div class="sidebar">
                     <a href="#">
-                        <span class="material-symbols-sharp">pie_chart</span>
+                        <span class="material-symbols-sharp">insights</span>
+                        <h4>Indicators</h4>
+                    </a>
+                </div>
+                <div class="sidebar">
+                    <a href="#">
+                        <span class="material-symbols-sharp">account_tree</span>
                         <h4>Analytics</h4>
-                    </a>
-                </div>
-                <div class="sidebar">
-                    <a href="#">
-                        <span class="material-symbols-sharp">message</span>
-                        <h4>Messages</h4>
                     </a>
                 </div>
                 <div class="sidebar">
@@ -108,9 +108,15 @@
                 <div class="updates">
                     <span id="hour" class="material-symbols-sharp">hourglass_top</span>
                     <h4>Market Close</h4>
-                    <p>Securtiy Updates</p>
-                    <p>General Updates</p>
-                    <a href="#">Update Now</a>
+                    <h5>Nairobi SE</h5>
+                    <p id="nse"></p>
+                    <h5>New York SE</h5>
+                    <p id="nyse"></p>
+                    <h5>Hong Kong SE</h5>
+                    <p id="hkse"></p>
+                    <h5>London SE</h5>
+                    <p id="lse"></p>
+                    <a href="#" id="current-time"></a>
                 </div>
 
             </aside>
@@ -125,15 +131,15 @@
                 <div class="cards">
                     <div class="card">
                         <div class="top">
-                            <div class="left">
+                            <div class="left" id="cardName1">
                                 <img src="./images/BTC.png" alt="btc">
                                 <h2>BTC</h2>                                
                             </div>
                             <img class="right" src="./images/visa.png" alt="visa" >
                         </div>
     
-                        <div class="middle">
-                            <h1>$839,111</h1>
+                        <div class="middle" id="cardVal1">
+                            <h2 style="font-size: 1.8rem">$28,303.69</h2>
                             <div class="chip">
                                 <img src="./images/card chip.png" alt="chip">
                             </div>
@@ -148,7 +154,7 @@
                             <div class="right">
                                 <div class="expiry">
                                     <small>Expiry</small>
-                                    <h5>32/13/99</h5>
+                                    <h5>04/20/69</h5>
                                 </div>
                                 <div class="cvv">
                                     <small>CVV</small>
@@ -161,15 +167,15 @@
 
                     <div class="card">
                         <div class="top">
-                            <div class="left">
+                            <div class="left" id="cardName2">
                                 <img src="./images/ETH.png" alt="btc">
                                 <h2>ETH</h2>
                             </div>
                             <img src="./images/master card.png" alt="visa" class="right">
                         </div>
     
-                        <div class="middle">
-                            <h1>$420,069</h1>
+                        <div class="middle" id="cardVal2">
+                            <h1 style="font-size: 1.8rem">$1,890.90</h1>
                             <div class="chip">
                                 <img src="./images/card chip.png" alt="chip">
                             </div>
@@ -188,7 +194,7 @@
                                 </div>
                                 <div class="cvv">
                                     <small>CVV</small>
-                                    <h5>069</h5>
+                                    <h5>007</h5>
                                 </div>
                             </div>
                         </div>
@@ -197,15 +203,15 @@
 
                     <div class="card">
                         <div class="top">
-                            <div class="left">
+                            <div class="left" id="cardName3">
                                 <img src="./images/ETH.png" alt="btc">
-                                <h2>DOGE</h2>
+                                <h2>TETHER</h2>
                             </div>
                             <img src="./images/master card.png" alt="visa" class="right">
                         </div>
     
-                        <div class="middle">
-                            <h1>$182,000</h1>
+                        <div class="middle" id="cardVal3">
+                            <h1 style="font-size: 1.8rem">$1.00009</h1>
                             <div class="chip">
                                 <img src="./images/card chip.png" alt="chip">
                             </div>
@@ -340,8 +346,53 @@
 
                 <!-- ===End of Fast Pay=== -->
 
-                <canvas id="chart">
-                </canvas>
+                <div style="margin-top: 20px;" id="chart">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div id="tradingview_7aeb4"></div>
+                        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/KESUSD/?exchange=FX_IDC" rel="noopener" target="_blank"><span class="blue-text">KES USD chart</span></a> by TradingView</div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                        new TradingView.widget(
+                        {
+                        "autosize": true,
+                        "symbol": "FX_IDC:KESUSD",
+                        "timezone": "Africa/Nairobi",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "withdateranges": true,
+                        "range": "12M",
+                        "hide_side_toolbar": false,
+                        "allow_symbol_change": true,
+                        "watchlist": [
+                        "FX_IDC:KESUSD",
+                        "FX_IDC:KESEUR",
+                        "FX:EURUSD",
+                        "NASDAQ:AMZN",
+                        "NASDAQ:MSFT",
+                        "NASDAQ:META",
+                        "NASDAQ:TSLA",
+                        "NASDAQ:GOOGL",
+                        "BINANCE:BTCUSDT",
+                        "BITSTAMP:ETHUSD",
+                        "FRED:SP500",
+                        "MCX:CRUDEOIL1!",
+                        "MCX:GOLD1!"
+                        ],
+                        "details": true,
+                        "hotlist": true,
+                        "calendar": true,
+                        "container_id": "tradingview_7aeb4"
+                    }
+                        );
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+
+                </div>
 
             </section>
             <!-- end middle -->
@@ -541,7 +592,7 @@
         <!-- =============END OF ASIDE========== -->
 
         <script src="./scripts/index.js" async defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.js" integrity="sha512-v3ygConQmvH0QehvQa6gSvTE2VdBZ6wkLOlmK7Mcy2mZ0ZF9saNbbk19QeaoTHdWIEiTlWmrwAL4hS8ElnGFbA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         
     </body>
 </html>

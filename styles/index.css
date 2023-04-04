@@ -342,8 +342,10 @@ main section.middle .cards{
     gap: 1.4rem;
 }
 
+/* #ff796f, #bd261b */
+
 main section.middle .cards .card{
-    background: linear-gradient(#ff796f, #bd261b);
+    background: linear-gradient(black, rgb(194, 165, 2));
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     color: white;
@@ -357,12 +359,12 @@ main section.middle .cards .card{
 }
 
 main section.middle .cards .card:nth-child(2){
-    background: linear-gradient(#7f8191, #27282f);
+    background: linear-gradient(#a10000, black);
     box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
 }
 
 main section.middle .cards .card:nth-child(3){
-    background: linear-gradient(#5d70ff, #5719c2);
+    background: linear-gradient(black, #085701);
     box-shadow: 0 2rem 3rem var(--color-primary-light);
 }
 
@@ -383,8 +385,8 @@ main section.middle .card .top .left{
 }
 
 main section.middle .card .top .left .h2{
-    font-weight: 200;
-    font-size: 1.4rem;
+    font-weight: 100;
+    font-size: 1rem;
 }
 
 main section.middle .card .top .left img{
@@ -403,6 +405,7 @@ main section.middle .card .middle{
     display: flex;
     justify-content: space-between;
 }
+
 
 main section.middle .card .middle .chip{
     width: 3.5rem;
@@ -680,3 +683,7 @@ main .recent-transactions .card-details .card{
     }
 }
 
+#tradingview_7aeb4{
+    width: 800px;
+    height: 600px;
+}
