@@ -183,3 +183,11 @@
                     <!-- End recent -->
 
                 </div>
+
+
+if(name =='ManU'){
+    .then(data => {
+        data.
+    })
+    
+}
