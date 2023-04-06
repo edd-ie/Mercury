@@ -56,12 +56,68 @@ function crpyto(coin, cash, card, name){
         let amnt = data["Realtime Currency Exchange Rate"]
         let val = amnt["5. Exchange Rate"]
         
+        let previous = parseFloat(amnt["9. Ask Price"])
+        let current = parseFloat(amnt["8. Bid Price"])
+        let percent = (((current-previous)/previous)*100)
+        console.log('Percent:',percent, Math.sign(percent))
+
         if (card != undefined){
             card.textContent = `${cash} ${(parseInt(val))}`
             name.textContent = coin
+
+
+            if(coin == 'BTC'){
+                let trackName = document.getElementById("p1-name")
+                let trackPrev = document.getElementById("p1-prev")
+                let trackVal = document.getElementById("p1-val")
+    
+                trackName.textContent = 'Bitcoin'
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+            }
+            if(coin == 'eth'){
+                let trackName = document.getElementById("p2-name")
+                let trackPrev = document.getElementById("p2-prev")
+                let trackVal = document.getElementById("p2-val")
+    
+                trackName.textContent = 'Ethereum'
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+            }
+            if(coin == 'usdt'){
+                let trackName = document.getElementById("p3-name")
+                let trackPrev = document.getElementById("p3-prev")
+                let trackVal = document.getElementById("p3-val")
+    
+                trackName.textContent = 'Tether'
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+            }
+
         }
         
-        return (parseInt(close)).toFixed(2)
+        return (parseFloat(current)).toFixed(2)
     })
 }
 
@@ -73,7 +129,8 @@ function forex(from, to, card, name){
         let source = data['Time Series FX (Daily)']
         let key = Object.keys(source)[0];
         let close = source[key]["4. close"];
-        let amnt = (parseInt(close)).toFixed(2)
+        // console.log(close, source[Object.keys(source)[1]]["4. close"]);
+        let amnt = (parseFloat(close)).toFixed(2)
         console.log(amnt);
 
         if (card != undefined){
@@ -81,6 +138,61 @@ function forex(from, to, card, name){
             name.textContent = from
         }
         
+        let previous = parseFloat(source[Object.keys(source)[0]]["4. close"])
+        let current = parseFloat(source[Object.keys(source)[1]]["4. close"])
+        let percent = (((current-previous)/previous)*100)
+        console.log('Percent:',percent, Math.sign(percent))
+
+        if(from == 'USD'){
+            let trackName = document.getElementById("p1-name")
+            let trackPrev = document.getElementById("p1-prev")
+            let trackVal = document.getElementById("p1-val")
+
+            trackName.textContent = 'USD/KES'
+            trackPrev.textContent = (previous).toFixed(2)
+            if(Math.sign(percent) == -1){
+                trackVal.textContent = `${percent}%`
+                trackVal.style = 'color: red;'
+            }
+            if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                trackVal.textContent = `${percent}%`
+                trackVal.style = 'color: green;'
+            }
+        }
+        if(from == 'EUR'){
+            let trackName = document.getElementById("p2-name")
+            let trackPrev = document.getElementById("p2-prev")
+            let trackVal = document.getElementById("p2-val")
+
+            trackName.textContent = 'EUR/KES'
+            trackPrev.textContent = (previous).toFixed(2)
+            if(Math.sign(percent) == -1){
+                trackVal.textContent = `${percent}%`
+                trackVal.style = 'color: red;'
+            }
+            if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                trackVal.textContent = `${percent}%`
+                trackVal.style = 'color: green;'
+            }
+        }
+        if(from == 'CAD'){
+            let trackName = document.getElementById("p3-name")
+            let trackPrev = document.getElementById("p3-prev")
+            let trackVal = document.getElementById("p3-val")
+
+            trackName.textContent = 'CAD/KES'
+            trackPrev.textContent = (previous).toFixed(2)
+            if(Math.sign(percent) == -1){
+                trackVal.textContent = `${percent}%`
+                trackVal.style = 'color: red;'
+            }
+            if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                trackVal.textContent = `${percent}%`
+                trackVal.style = 'color: green;'
+            }
+        }
+        
+
         return amnt
     })
 }
@@ -95,12 +207,75 @@ function stocks(stock, card, name){
         let source = data['Time Series (5min)']
         let key = Object.keys(source)[0];
         let close = source[key]["4. close"];
-        let amnt = (parseInt(close)).toFixed(2)
+        let amnt = (parseFloat(close)).toFixed(2)
         console.log(amnt);
+
+        let previous = parseFloat(source[Object.keys(source)[0]]["4. close"])
+        let current = parseFloat(source[Object.keys(source)[1]]["4. close"])
+        let percent = (((current-previous)/previous)*100)
+        console.log('Percent:',percent, Math.sign(percent))
 
         if (card != undefined){
             card.textContent = `$ ${amnt}`
-            name.textContent = stock
+
+            if(stock == 'TSLA'){
+                name.textContent = 'Tesla'
+
+                let trackName = document.getElementById("p1-name")
+                let trackPrev = document.getElementById("p1-prev")
+                let trackVal = document.getElementById("p1-val")
+
+                trackName.textContent = 'TSLA'
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+
+            }
+            else if(stock == 'MSFT'){
+                name.textContent = 'Microsoft'
+
+                let trackName = document.getElementById("p2-name")
+                let trackPrev = document.getElementById("p2-prev")
+                let trackVal = document.getElementById("p2-val")
+
+                trackName.textContent = stock
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+
+            }
+            else if(stock == 'GOOGL'){
+                name.textContent = 'Google'
+                
+                let trackName = document.getElementById("p3-name")
+                let trackPrev = document.getElementById("p3-prev")
+                let trackVal = document.getElementById("p3-val")
+
+                trackName.textContent = stock
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+
+            }
+            else{name.textContent = stock}
         }
         
         return amnt
@@ -108,150 +283,320 @@ function stocks(stock, card, name){
 }
 
 
-let visual = document.querySelector('#chart')
-console.log('view',visual.textContent);
 
+function commodites(goods, card, name){
 
-// ================== Tab select ===============================
-let tab = document.querySelectorAll('Aside .sidebar')
-console.log(tab)
+    fetch(`https://www.alphavantage.co/query?function=${goods}&interval=monthly&apikey=${apikey3}`)
+    .then(res => res.json())
+    .then((list)=>{
+        let source = list.data;
+        let key = source[0];
+        console.log(key);
+        let close = key["value"];
+        let amnt = (parseFloat(close))
+        console.log(amnt);
 
-for(let i = 0; i < tab.length; i++){
-    let skip = tab.length;
-    
-    tab[i].addEventListener('mouseover', ()=>{
-        let active = tab[i].firstElementChild
-        active.setAttribute('class', 'active');
-    })
+        let previous = parseFloat(source[1]["value"])
+        let current = parseFloat(source[0]["value"])
+        let percent = (((current-previous)/previous)*100)
+        console.log('Percent:',percent, Math.sign(percent))
 
-    tab[i].addEventListener('mouseout', ()=>{
-        let active = tab[i].firstElementChild
-        active.removeAttribute('class', 'active');
-    })
+        if (card != undefined){
+            card.textContent = `$ ${amnt}`
+            if(goods == 'WTI'){
+                name.textContent = 'Crude Oil / barrel'
 
-    tab[i].addEventListener('click', ()=>{
-        let name = tab[i].firstElementChild.lastElementChild.textContent
-        // ======CRYPTO========== //
-        if(name == 'Crypto'){
-            crpyto("BTC", "KES", cardVal1, cardName1)
-            crpyto("eth", "KES", cardVal2, cardName2)
-            crpyto("usdt", "KES", cardVal3, cardName3)
-        }
-        else if(name == 'Forex'){
-            forex('USD', "KES", cardVal1, cardName1)
-            forex('EUR', "KES", cardVal2, cardName2)
-            forex('CAD', "KES", cardVal3, cardName3)
-        }
-        else if(name == 'Stocks'){
-            stocks('TSLA', cardVal1, cardName1)
-            stocks('MSFT', cardVal2, cardName2)
-            stocks('GOOGL', cardVal3, cardName3)
-        }
-        else if(name == 'Commodites'){
+                let trackName = document.getElementById("p1-name")
+                let trackPrev = document.getElementById("p1-prev")
+                let trackVal = document.getElementById("p1-val")
 
-        }
-        else if(name == 'Indicators'){
-
-        }
-        else if(name == 'Analytics'){
-
-        }
-
-    })
-}
-
-
-// ============== TIME ==============//
-
-
-
-		
-function countdown (elem, open, close){
-    // Set the opening and closing times
-		let openingTime = [open, 0]; // 9:00am Eastern time
-		let closingTime = [close, 0]; // 6:00pm
-
-        if(elem == 'lse'){closingTime = [close, 30]}
-
-		// Set the days of the week
-		let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-		// Update the countdown clock every second
-
-    setInterval(function() {
-        // Get the current date and time
-        let currentDate = new Date();
-        let currentDayOfWeek = currentDate.getDay(); // 0 (Sunday) to 6 (Saturday)
-        let currentHour = currentDate.getHours();
-        let currentMinute = currentDate.getMinutes();
-        let currentSecond = currentDate.getSeconds();
-    
-        // Calculate the time until the next opening and closing times
-        let timeUntilOpening = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), openingTime[0], openingTime[1]) - currentDate;
-        let timeUntilClosing = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), closingTime[0], closingTime[1]) - currentDate;
-    
-        // If it's already past closing time on Friday, set the next opening time to Monday at 9:00am
-        if (currentDayOfWeek == 5 && currentHour >= closingTime[0]) {
-            timeUntilOpening = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 3, openingTime[0], openingTime[1]) - currentDate;
-        }
-    
-        // If the next opening time is in the past, set it to the next day
-        if (timeUntilOpening < 0) {
-            timeUntilOpening = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1, openingTime[0], openingTime[1]) - currentDate;
-        }
-    
-        // If the next closing time is in the past, set it to the next day
-        if (timeUntilClosing < 0) {
-            timeUntilClosing = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1, closingTime[0], closingTime[1]) - currentDate;
-        }
-    
-        // Calculate the hours, minutes, and seconds until the next opening or closing time
-        let timeUntil = (timeUntilOpening < timeUntilClosing) ? timeUntilOpening : timeUntilClosing;
-        let hours = Math.floor(timeUntil / (1000 * 60 * 60));
-        let minutes = Math.floor((timeUntil % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((timeUntil % (1000 * 60)) / 1000);
-    
-        // Display the countdown clock
-        if (timeUntil < timeUntilClosing) {
-            document.getElementById(elem).innerHTML = "Opens in " + hours + "h " + minutes + "m " + seconds + "s";
-        } else {
-            document.getElementById(elem).innerHTML = "Closes in " + hours + "h " + minutes + "m " + seconds + "s";
-        }
-    
-        // If the countdown is finished, display a message and
-        if (timeUntil < 0) {
-            if (currentDayOfWeek == 5) {
-                document.getElementById(elem).innerHTML = "Closed, opening on Monday at " + openingTime[0] + ":" + (openingTime[1] < 10 ? "0" + openingTime[1] : openingTime[1]);
-            } else {
-                document.getElementById(elem).innerHTML = "Closed, opening tomorrow at " + openingTime[0] + ":" + (openingTime[1] < 10 ? "0" + openingTime[1] : openingTime[1]);
+                trackName.textContent = 'Crude Oil'
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
             }
-        }		
-    }, 1000);
+            else if(goods == 'COPPER'){
+                name.textContent = 'Copper / tonne'
+
+                let trackName = document.getElementById("p2-name")
+                let trackPrev = document.getElementById("p2-prev")
+                let trackVal = document.getElementById("p2-val")
+
+                trackName.textContent = goods
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+            }
+            else if(goods == 'NATURAL_GAS'){
+                name.textContent = 'Nat GAS / 1m B.T.U'
+
+                let trackName = document.getElementById("p3-name")
+                let trackPrev = document.getElementById("p3-prev")
+                let trackVal = document.getElementById("p3-val")
+
+                trackName.textContent = 'Natural gas'
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+            }
+            else{name.textContent = goods}
+        }
+        
+        return amnt
+    })
 }
 
-countdown('nyse', 16, 9)
-countdown('hkse', 4, 9)
-countdown('lse', 11, 19)
-countdown('nse', 9, 15)
 
-// Update the current time every second
-var currentTime = setInterval(function() {
-    // Get the current date and time
-    var currentDate = new Date();
-    var currentHour = currentDate.getHours();
-    var currentMinute = currentDate.getMinutes();
-    var currentSecond = currentDate.getSeconds();
 
-    // Convert the hour to 12-hour format and determine AM or PM
-    var meridiem = "AM";
-    if (currentHour > 12) {
-        currentHour -= 12;
-        meridiem = "PM";
+
+function indicators(indicator, card, name){
+
+    fetch(`https://www.alphavantage.co/query?function=${indicator}&apikey=${apikey2}`)
+    .then(res => res.json())
+    .then((data)=>{
+        let amnt = data["data"]
+        let val = amnt[0]["value"]
+        
+        let previous = parseFloat(amnt[1]["value"])
+        let current = parseFloat(amnt[0]["value"])
+        let percent = (((current-previous)/previous)*100)
+        console.log('Percent:',percent, Math.sign(percent))
+
+        if (card != undefined){
+            card.textContent = `${(parseFloat(val).toFixed(2))}%`
+            name.textContent = indicator
+
+
+            if(indicator == 'INFLATION'){
+                let trackName = document.getElementById("p1-name")
+                let trackPrev = document.getElementById("p1-prev")
+                let trackVal = document.getElementById("p1-val")
+    
+                trackName.textContent = 'Consumer Prices'
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+            }
+            if(indicator == 'eth'){
+                let trackName = document.getElementById("p2-name")
+                let trackPrev = document.getElementById("p2-prev")
+                let trackVal = document.getElementById("p2-val")
+    
+                trackName.textContent = 'Ethereum'
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+            }
+            if(indicator == 'usdt'){
+                let trackName = document.getElementById("p3-name")
+                let trackPrev = document.getElementById("p3-prev")
+                let trackVal = document.getElementById("p3-val")
+    
+                trackName.textContent = 'Tether'
+                trackPrev.textContent = (previous).toFixed(2)
+                if(Math.sign(percent) == -1){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: red;'
+                }
+                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                    trackVal.textContent = `${percent}%`
+                    trackVal.style = 'color: green;'
+                }
+            }
+
+        }
+        
+        return (parseFloat(close)).toFixed(2)
+    })
+}
+
+
+
+
+
+let visual = document.querySelector('#chart')
+
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    
+    // ================== Tab select ===============================
+    let tab = document.querySelectorAll('Aside .sidebar')
+    console.log(tab)
+
+    for(let i = 0; i < tab.length; i++){
+        let skip = tab.length;
+        
+        tab[i].addEventListener('mouseover', ()=>{
+            let active = tab[i].firstElementChild
+            active.setAttribute('class', 'active');
+        })
+
+        tab[i].addEventListener('mouseout', ()=>{
+            let active = tab[i].firstElementChild
+            active.removeAttribute('class', 'active');
+        })
+
+        tab[i].addEventListener('click', ()=>{
+            let name = tab[i].firstElementChild.lastElementChild.textContent
+            // ======CRYPTO loading========= //
+            if(name == 'Crypto'){
+                crpyto("BTC", "KES", cardVal1, cardName1)
+                crpyto("eth", "KES", cardVal2, cardName2)
+                crpyto("usdt", "KES", cardVal3, cardName3)
+            }
+            // ======Forex loading========= //
+            else if(name == 'Forex'){
+                forex('USD', "KES", cardVal1, cardName1)
+                forex('EUR', "KES", cardVal2, cardName2)
+                forex('CAD', "KES", cardVal3, cardName3)
+            }
+            // ======Stocks loading========= //
+            else if(name == 'Stocks'){
+                stocks('TSLA', cardVal1, cardName1)
+                stocks('MSFT', cardVal2, cardName2)
+                stocks('GOOGL', cardVal3, cardName3)
+            }
+            // ======Commodities loading========= //
+            else if(name == 'Commodites'){
+                commodites('WTI', cardVal1, cardName1)
+                commodites('COPPER', cardVal2, cardName2)
+                commodites('NATURAL_GAS', cardVal3, cardName3)
+            }
+            // ======Indicators loading========= //
+            else if(name == 'Indicators'){
+                indicators('INFLATION', cardVal1, cardName1)
+
+            }
+            else if(name == 'Analytics'){
+
+            }
+
+        })
     }
 
-    // Display the current time
-    document.getElementById("current-time").innerHTML = currentHour + ":" + (currentMinute < 10 ? "0" + currentMinute : currentMinute) + ":" + (currentSecond < 10 ? "0" + currentSecond : currentSecond) + " " + meridiem;
-}, 1000);
+
+    // ============== TIME ==============//
+
+
+
+            
+    function countdown (elem, open, close){
+        // Set the opening and closing times
+            let openingTime = [open, 0]; // 9:00am Eastern time
+            let closingTime = [close, 0]; // 6:00pm
+
+            if(elem == 'lse'){closingTime = [close, 30]}
+
+            // Set the days of the week
+            let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            // Update the countdown clock every second
+
+        setInterval(function() {
+            // Get the current date and time
+            let currentDate = new Date();
+            let currentDayOfWeek = currentDate.getDay(); // 0 (Sunday) to 6 (Saturday)
+            let currentHour = currentDate.getHours();
+            let currentMinute = currentDate.getMinutes();
+            let currentSecond = currentDate.getSeconds();
+        
+            // Calculate the time until the next opening and closing times
+            let timeUntilOpening = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), openingTime[0], openingTime[1]) - currentDate;
+            let timeUntilClosing = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), closingTime[0], closingTime[1]) - currentDate;
+        
+            // If it's already past closing time on Friday, set the next opening time to Monday at 9:00am
+            if (currentDayOfWeek == 5 && currentHour >= closingTime[0]) {
+                timeUntilOpening = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 3, openingTime[0], openingTime[1]) - currentDate;
+            }
+        
+            // If the next opening time is in the past, set it to the next day
+            if (timeUntilOpening < 0) {
+                timeUntilOpening = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1, openingTime[0], openingTime[1]) - currentDate;
+            }
+        
+            // If the next closing time is in the past, set it to the next day
+            if (timeUntilClosing < 0) {
+                timeUntilClosing = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1, closingTime[0], closingTime[1]) - currentDate;
+            }
+        
+            // Calculate the hours, minutes, and seconds until the next opening or closing time
+            let timeUntil = (timeUntilOpening < timeUntilClosing) ? timeUntilOpening : timeUntilClosing;
+            let hours = Math.floor(timeUntil / (1000 * 60 * 60));
+            let minutes = Math.floor((timeUntil % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((timeUntil % (1000 * 60)) / 1000);
+        
+            // Display the countdown clock
+            if (timeUntil < timeUntilClosing) {
+                document.getElementById(elem).innerHTML = "Opens in " + hours + "h " + minutes + "m " + seconds + "s";
+            } else {
+                document.getElementById(elem).innerHTML = "Closes in " + hours + "h " + minutes + "m " + seconds + "s";
+            }
+        
+            // If the countdown is finished, display a message and
+            if (timeUntil < 0) {
+                if (currentDayOfWeek == 5) {
+                    document.getElementById(elem).innerHTML = "Closed, opening on Monday at " + openingTime[0] + ":" + (openingTime[1] < 10 ? "0" + openingTime[1] : openingTime[1]);
+                } else {
+                    document.getElementById(elem).innerHTML = "Closed, opening tomorrow at " + openingTime[0] + ":" + (openingTime[1] < 10 ? "0" + openingTime[1] : openingTime[1]);
+                }
+            }		
+        }, 1000);
+    }
+
+    countdown('nyse', 16, 9)
+    countdown('hkse', 4, 9)
+    countdown('lse', 11, 19)
+    countdown('nse', 9, 15)
+
+    // Update the current time every second
+    var currentTime = setInterval(function() {
+        // Get the current date and time
+        var currentDate = new Date();
+        var currentHour = currentDate.getHours();
+        var currentMinute = currentDate.getMinutes();
+        var currentSecond = currentDate.getSeconds();
+
+        // Convert the hour to 12-hour format and determine AM or PM
+        var meridiem = "AM";
+        if (currentHour > 12) {
+            currentHour -= 12;
+            meridiem = "PM";
+        }
+
+        // Display the current time
+        document.getElementById("current-time").innerHTML = currentHour + ":" + (currentMinute < 10 ? "0" + currentMinute : currentMinute) + ":" + (currentSecond < 10 ? "0" + currentSecond : currentSecond) + " " + meridiem;
+    }, 1000);
+})
 
 
 

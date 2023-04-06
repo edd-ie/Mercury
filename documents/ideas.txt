@@ -1,0 +1,185 @@
+<div class="investments">
+                    <div class="header">
+                        <h1>Investments</h1>
+                        <a href="#">More
+                            <span class="material-symbols-sharp">chevron_right</span>
+                        </a>
+                    </div>
+
+                    <div class="investment">
+                        <img src="./images/uniliver.png" alt="">
+                        <h4>uniliver</h4>
+                        <div class="date-time">
+                            <p>7/nov/23</p>
+                            <small class="text-muted">9:12</small>
+                        </div>
+                        <div class="bonds">
+                            <p>1234</p>
+                            <small class="text-muted">Grtd</small>
+                        </div>
+                        <div class="amount">
+                            <h4>$232</h4>
+                            <small class="danger">-42.3%</small>
+                        </div>
+                    </div>
+                    <!-- Invest -->
+                    
+                    <div class="investment">
+                        <img src="./images/tesla.png" alt="">
+                        <h4>Tesla</h4>
+                        <div class="date-time">
+                            <p>7/nov/23</p>
+                            <small class="text-muted">9:12</small>
+                        </div>
+                        <div class="bonds">
+                            <p>1234</p>
+                            <small class="text-muted">Bonds</small>
+                        </div>
+                        <div class="amount">
+                            <h4>$232</h4>
+                            <small class="success">+42.3%</small>
+                        </div>
+                    </div>
+                    <!-- Invest -->
+                    
+                    <div class="investment">
+                        <img src="./images/monster.png" alt="">
+                        <h4>Monster</h4>
+                        <div class="date-time">
+                            <p>7/nov/23</p>
+                            <small class="text-muted">9:12</small>
+                        </div>
+                        <div class="bonds">
+                            <p>1234</p>
+                            <small class="text-muted">Grtd</small>
+                        </div>
+                        <div class="amount">
+                            <h4>$232</h4>
+                            <small class="danger">-42.3%</small>
+                        </div>
+                    </div>
+                    <!-- Invest -->
+                    
+                    <div class="investment">
+                        <img src="./images/mcdonalds.png" alt="">
+                        <h4>mcdonalds</h4>
+                        <div class="date-time">
+                            <p>7/nov/23</p>
+                            <small class="text-muted">9:12</small>
+                        </div>
+                        <div class="bonds">
+                            <p>1234</p>
+                            <small class="text-muted">Grtd</small>
+                        </div>
+                        <div class="amount">
+                            <h4>$232</h4>
+                            <small class="danger">-42.3%</small>
+                        </div>
+                    </div>
+                    <!-- Invest -->
+
+                </div>
+
+
+<div class="recent-transactions">
+                    <div class="header">
+                        <h2>Recent Transactions</h2>
+                        <a href="#">More
+                            <span class="material-symbols-sharp">chevron_right</span>
+                        </a>
+                    </div>
+
+                    <div class="transaction">
+                        <div class="service">
+                            <div class="icon bg-purple-light">
+                                <span class="material-symbols-sharp">headset_mic</span>
+                            </div>
+                            <div class="details">
+                                <h4>Music</h4>
+                                <p>6776868</p>
+                            </div>
+                        </div>
+
+                        <div class="card-details">
+                            <div class="card bg-danger">
+                                <img src="./images/visa.png" alt="">
+                            </div>
+                            <div class="details">
+                                <p>@3345</p>
+                                <small>credit</small>
+                            </div>
+                        </div>
+                        <h4>20</h4>
+                    </div>
+                    <!-- End recent -->
+                    <div class="transaction">
+                        <div class="service">
+                            <div class="icon bg-purple-light">
+                                <span class="material-symbols-sharp bg-purple-light">headset_mic</span>
+                            </div>
+                            <div class="details">
+                                <h4>shop</h4>
+                                <p>6776868</p>
+                            </div>
+                        </div>
+
+                        <div class="card-details">
+                            <div class="card bg-danger">
+                                <img src="./images/visa.png" alt="">
+                            </div>
+                            <div class="details">
+                                <p>@3345</p>
+                                <small>credit</small>
+                            </div>
+                        </div>
+                        <h4>20</h4>
+                    </div>
+                    <!-- End recent -->
+                    <div class="transaction">
+                        <div class="service">
+                            <div class="icon bg-purple-light">
+                                <span class="material-symbols-sharp purple">headset_mic</span>
+                            </div>
+                            <div class="details">
+                                <h4>eats</h4>
+                                <p>6776868</p>
+                            </div>
+                        </div>
+
+                        <div class="card-details">
+                            <div class="card bg-primary">
+                                <img src="./images/visa.png" alt="">
+                            </div>
+                            <div class="details">
+                                <p>@3345</p>
+                                <small>credit</small>
+                            </div>
+                        </div>
+                        <h4>20</h4>
+                    </div>
+                    <!-- End recent -->
+                    <div class="transaction">
+                        <div class="service">
+                            <div class="icon bg-purple-light">
+                                <span class="material-symbols-sharp">headset_mic</span>
+                            </div>
+                            <div class="details">
+                                <h4>play</h4>
+                                <p>6776868</p>
+                            </div>
+                        </div>
+
+                        <div class="card-details">
+                            <div class="card bg-dark">
+                                <img src="./images/master card.png" alt="">
+                            </div>
+                            <div class="details">
+                                <p>@3345</p>
+                                <small>credit</small>
+                            </div>
+                        </div>
+                        <h4>20</h4>
+                    </div>
+                    <!-- End recent -->
+
+                </div>

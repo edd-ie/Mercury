@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Mercury</title>
+        <link rel="icon" href="./images/logo.png" type="image/icon type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Material icons -->
@@ -30,7 +31,7 @@
                 <div class="profile-area">
                     <div class="theme-btn">
                         <span class="material-symbols-sharp active">light_mode</span>
-                        <span class="material-symbols-sharp">dark_mode</span>
+                        <span class="material-symbols-sharp ">dark_mode</span>
                     </div>
                     <div class="profile">
                         <div class="profile-photo">
@@ -241,11 +242,11 @@
 
                 <div class="monthly-report">
                     <div class="report">
-                        <h3>income</h3>
+                        <h3 id="p1-name">income</h3>
                         <div>
                             <details>
-                                <h1>$23232</h1>
-                                <h6 class="success">+23%</h6>
+                                <h1 id="p1-prev">$23232</h1>
+                                <h6 class="success" id="p1-val">+23%</h6>
                             </details>
                             <p class="text-muted">compared to 32</p>
                         </div>
@@ -253,22 +254,22 @@
                     <!-- report 1 -->
 
                     <div class="report">
-                        <h3>Expense</h3>
+                        <h3 id="p2-name">Expense</h3>
                         <div>
                             <details>
-                                <h1>$23232</h1>
-                                <h6 class="danger">+23%</h6>
+                                <h1 id="p2-prev">$23232</h1>
+                                <h6 class="danger" id="p2-val">+23%</h6>
                             </details>
                             <p class="text-muted">compared to 32</p>
                         </div>
                     </div>
                     <!-- Report2 -->
                     <div class="report">
-                        <h3>cash</h3>
+                        <h3 id="p3-name">cash</h3>
                         <div>
                             <details>
-                                <h1>$23232</h1>
-                                <h6 class="success">+23%</h6>
+                                <h1 id="p3-prev">$23232</h1>
+                                <h6 class="success" id="p3-val">+23%</h6>
                             </details>
                             <p class="text-muted">compared to 32</p>
                         </div>
@@ -350,7 +351,6 @@
                     <!-- TradingView Widget BEGIN -->
                     <div class="tradingview-widget-container">
                         <div id="tradingview_7aeb4"></div>
-                        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/KESUSD/?exchange=FX_IDC" rel="noopener" target="_blank"><span class="blue-text">KES USD chart</span></a> by TradingView</div>
                         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
                         <script type="text/javascript">
                         new TradingView.widget(
@@ -398,193 +398,53 @@
             <!-- end middle -->
 
             <section class="right">
-                <div class="investments">
-                    <div class="header">
-                        <h1>Investments</h1>
-                        <a href="#">More
-                            <span class="material-symbols-sharp">chevron_right</span>
-                        </a>
-                    </div>
-
-                    <div class="investment">
-                        <img src="./images/uniliver.png" alt="">
-                        <h4>uniliver</h4>
-                        <div class="date-time">
-                            <p>7/nov/23</p>
-                            <small class="text-muted">9:12</small>
-                        </div>
-                        <div class="bonds">
-                            <p>1234</p>
-                            <small class="text-muted">Grtd</small>
-                        </div>
-                        <div class="amount">
-                            <h4>$232</h4>
-                            <small class="danger">-42.3%</small>
-                        </div>
-                    </div>
-                    <!-- Invest -->
-                    
-                    <div class="investment">
-                        <img src="./images/tesla.png" alt="">
-                        <h4>Tesla</h4>
-                        <div class="date-time">
-                            <p>7/nov/23</p>
-                            <small class="text-muted">9:12</small>
-                        </div>
-                        <div class="bonds">
-                            <p>1234</p>
-                            <small class="text-muted">Bonds</small>
-                        </div>
-                        <div class="amount">
-                            <h4>$232</h4>
-                            <small class="success">+42.3%</small>
-                        </div>
-                    </div>
-                    <!-- Invest -->
-                    
-                    <div class="investment">
-                        <img src="./images/monster.png" alt="">
-                        <h4>Monster</h4>
-                        <div class="date-time">
-                            <p>7/nov/23</p>
-                            <small class="text-muted">9:12</small>
-                        </div>
-                        <div class="bonds">
-                            <p>1234</p>
-                            <small class="text-muted">Grtd</small>
-                        </div>
-                        <div class="amount">
-                            <h4>$232</h4>
-                            <small class="danger">-42.3%</small>
-                        </div>
-                    </div>
-                    <!-- Invest -->
-                    
-                    <div class="investment">
-                        <img src="./images/mcdonalds.png" alt="">
-                        <h4>mcdonalds</h4>
-                        <div class="date-time">
-                            <p>7/nov/23</p>
-                            <small class="text-muted">9:12</small>
-                        </div>
-                        <div class="bonds">
-                            <p>1234</p>
-                            <small class="text-muted">Grtd</small>
-                        </div>
-                        <div class="amount">
-                            <h4>$232</h4>
-                            <small class="danger">-42.3%</small>
-                        </div>
-                    </div>
-                    <!-- Invest -->
-
-                </div>
+                
                 
                 <!-- =========Invest======== -->
-
-                <div class="recent-transactions">
-                    <div class="header">
-                        <h2>Recent Transactions</h2>
-                        <a href="#">More
-                            <span class="material-symbols-sharp">chevron_right</span>
-                        </a>
-                    </div>
-
-                    <div class="transaction">
-                        <div class="service">
-                            <div class="icon bg-purple-light">
-                                <span class="material-symbols-sharp">headset_mic</span>
-                            </div>
-                            <div class="details">
-                                <h4>Music</h4>
-                                <p>6776868</p>
-                            </div>
-                        </div>
-
-                        <div class="card-details">
-                            <div class="card bg-danger">
-                                <img src="./images/visa.png" alt="">
-                            </div>
-                            <div class="details">
-                                <p>@3345</p>
-                                <small>credit</small>
-                            </div>
-                        </div>
-                        <h4>20</h4>
-                    </div>
-                    <!-- End recent -->
-                    <div class="transaction">
-                        <div class="service">
-                            <div class="icon bg-purple-light">
-                                <span class="material-symbols-sharp bg-purple-light">headset_mic</span>
-                            </div>
-                            <div class="details">
-                                <h4>shop</h4>
-                                <p>6776868</p>
-                            </div>
-                        </div>
-
-                        <div class="card-details">
-                            <div class="card bg-danger">
-                                <img src="./images/visa.png" alt="">
-                            </div>
-                            <div class="details">
-                                <p>@3345</p>
-                                <small>credit</small>
-                            </div>
-                        </div>
-                        <h4>20</h4>
-                    </div>
-                    <!-- End recent -->
-                    <div class="transaction">
-                        <div class="service">
-                            <div class="icon bg-purple-light">
-                                <span class="material-symbols-sharp purple">headset_mic</span>
-                            </div>
-                            <div class="details">
-                                <h4>eats</h4>
-                                <p>6776868</p>
-                            </div>
-                        </div>
-
-                        <div class="card-details">
-                            <div class="card bg-primary">
-                                <img src="./images/visa.png" alt="">
-                            </div>
-                            <div class="details">
-                                <p>@3345</p>
-                                <small>credit</small>
-                            </div>
-                        </div>
-                        <h4>20</h4>
-                    </div>
-                    <!-- End recent -->
-                    <div class="transaction">
-                        <div class="service">
-                            <div class="icon bg-purple-light">
-                                <span class="material-symbols-sharp">headset_mic</span>
-                            </div>
-                            <div class="details">
-                                <h4>play</h4>
-                                <p>6776868</p>
-                            </div>
-                        </div>
-
-                        <div class="card-details">
-                            <div class="card bg-dark">
-                                <img src="./images/master card.png" alt="">
-                            </div>
-                            <div class="details">
-                                <p>@3345</p>
-                                <small>credit</small>
-                            </div>
-                        </div>
-                        <h4>20</h4>
-                    </div>
-                    <!-- End recent -->
-
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container" style="margin-top: 10px">
+                    <div class="tradingview-widget-container__widget" ></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+                        {"colorTheme": "dark",
+                            "dateRange": "12M",
+                            "exchange": "US",
+                            "showChart": false,
+                            "locale": "en",
+                            "largeChartUrl": "",
+                            "isTransparent": true,
+                            "showSymbolLogo": true,
+                            "showFloatingTooltip": true,
+                            "width": "400",
+                            "height": "360"
+                            
+                        }
+                    </script>
                 </div>
+                <!-- TradingView Widget END -->
+                
                 <!-- ====TRANSACTIONS======= -->
+
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+                    {
+                    "feedMode": "all_symbols",
+                    "colorTheme": "dark",
+                    "isTransparent": true,
+                    "displayMode": "regular",
+                    "width": "400",
+                    "height": "740",
+                    "locale": "en"
+                }
+                    </script>
+                </div>
+                <!-- TradingView  END -->
+
+
+                
+
+
 
             </section>
             <!-- end right -->
