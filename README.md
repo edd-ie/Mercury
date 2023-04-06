@@ -85,3 +85,4 @@ The project fetches data from outside sources using **APIs** and widgets
 * Widget source - [Trading view](http://tradingview.com/)
 
 ,ndjfnvjdnfjvbdhfb,ndjfnvjdnfjvbdhfb
+,ndjfnvjdnfjvbdhfb,ndjfnvjdnfjvbdhfb
