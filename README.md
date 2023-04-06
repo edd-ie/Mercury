@@ -85,3 +85,6 @@ The project fetches data from outside sources using **APIs** and widgets
 * Data source - [Alpha Vantage api](https://www.alphavantage.co/documentation/)
 * Widget source - [Trading view](http://tradingview.com/)
 
+,ndjfnvjdnfjvbdhfb,ndjfnvjdnfjvbdhfb
+,ndjfnvjdnfjvbdhfb,ndjfnvjdnfjvbdhfb,ndjfnvjdnfjvbdhfb,ndjfnvjdnfjvbdhfb
+,ndjfnvjdnfjvbdhfb,ndjfnvjdnfjvbdhfb
