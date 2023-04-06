@@ -17,7 +17,7 @@ To access **Mercury** website, simply click this url:
 [Mercury website](https://edd-ie.github.io/Mercury)
 
 **Cloning** the project files to your local repository:
-* HTTPS => https://github.com/edd-ie/Mercury.git
+* HTTPS => ```https://github.com/edd-ie/Mercury.git```
 * SSH => ```git@github.com:edd-ie/Mercury.git```
 * Git CLI => ```gh repo clone edd-ie/Mercury```
 
