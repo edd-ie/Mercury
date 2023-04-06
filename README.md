@@ -84,4 +84,5 @@ The ```indictators()``` function is responsible for fetching data from the Alpha
 The project fetches data from outside sources using **APIs** and widgets
 * Data source - [Alpha Vantage api](https://www.alphavantage.co/documentation/)
 * Widget source - [Trading view](http://tradingview.com/)
-
+* Fonts source - [Google Fonts](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap)
+* Icons source - [Google Icons](https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0)
