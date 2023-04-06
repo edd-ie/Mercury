@@ -359,12 +359,12 @@ main section.middle .cards .card{
 }
 
 main section.middle .cards .card:nth-child(2){
-    background: linear-gradient(#a10000, black);
+    background: linear-gradient(black, #a10000);
     box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
 }
 
 main section.middle .cards .card:nth-child(3){
-    background: linear-gradient(black, #085701);
+    background: linear-gradient(black, #0a2e8f);
     box-shadow: 0 2rem 3rem var(--color-primary-light);
 }
 

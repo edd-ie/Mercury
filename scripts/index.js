@@ -372,57 +372,21 @@ function indicators(indicator, card, name){
     fetch(`https://www.alphavantage.co/query?function=${indicator}&apikey=${apikey2}`)
     .then(res => res.json())
     .then((data)=>{
-        let amnt = data["data"]
-        let val = amnt[0]["value"]
-        
-        let previous = parseFloat(amnt[1]["value"])
-        let current = parseFloat(amnt[0]["value"])
-        let percent = (((current-previous)/previous)*100)
-        console.log('Percent:',percent, Math.sign(percent))
+        if(indicator == 'KEN'){
+            card.textContent = `$ 1,811`
+            name.textContent = 'GDP/Capita'
 
-        if (card != undefined){
-            card.textContent = `${(parseFloat(val).toFixed(2))}%`
-            name.textContent = indicator
-
-
-            if(indicator == 'INFLATION'){
-                let trackName = document.getElementById("p1-name")
-                let trackPrev = document.getElementById("p1-prev")
-                let trackVal = document.getElementById("p1-val")
-    
-                trackName.textContent = 'Consumer Prices'
-                trackPrev.textContent = (previous).toFixed(2)
-                if(Math.sign(percent) == -1){
-                    trackVal.textContent = `${percent}%`
-                    trackVal.style = 'color: red;'
-                }
-                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
-                    trackVal.textContent = `${percent}%`
-                    trackVal.style = 'color: green;'
-                }
-            }
-            if(indicator == 'eth'){
-                let trackName = document.getElementById("p2-name")
-                let trackPrev = document.getElementById("p2-prev")
-                let trackVal = document.getElementById("p2-val")
-    
-                trackName.textContent = 'Ethereum'
-                trackPrev.textContent = (previous).toFixed(2)
-                if(Math.sign(percent) == -1){
-                    trackVal.textContent = `${percent}%`
-                    trackVal.style = 'color: red;'
-                }
-                if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
-                    trackVal.textContent = `${percent}%`
-                    trackVal.style = 'color: green;'
-                }
-            }
-            if(indicator == 'usdt'){
+            
+            let previous = 2082
+            let current = 1811
+            let percent = (((current-previous)/previous)*100)
+            console.log('Percent:',percent, Math.sign(percent))
+           
                 let trackName = document.getElementById("p3-name")
                 let trackPrev = document.getElementById("p3-prev")
                 let trackVal = document.getElementById("p3-val")
     
-                trackName.textContent = 'Tether'
+                trackName.textContent = "Kenya's GDP"
                 trackPrev.textContent = (previous).toFixed(2)
                 if(Math.sign(percent) == -1){
                     trackVal.textContent = `${percent}%`
@@ -432,11 +396,61 @@ function indicators(indicator, card, name){
                     trackVal.textContent = `${percent}%`
                     trackVal.style = 'color: green;'
                 }
-            }
+        }
+        else{
+            let amnt = data["data"]
+            let val = amnt[0]["value"]
+            
+            let previous = parseFloat(amnt[1]["value"])
+            let current = parseFloat(amnt[0]["value"])
+            let percent = (((current-previous)/previous)*100)
+            console.log('Percent:',percent, Math.sign(percent))
 
+            if (card != undefined){
+                card.textContent = `${(parseFloat(val).toFixed(2))}%`
+                name.textContent = indicator
+    
+    
+                if(indicator == 'INFLATION'){
+                    let trackName = document.getElementById("p1-name")
+                    let trackPrev = document.getElementById("p1-prev")
+                    let trackVal = document.getElementById("p1-val")
+        
+                    trackName.textContent = 'Consumer Prices'
+                    trackPrev.textContent = (previous).toFixed(2)
+                    if(Math.sign(percent) == -1){
+                        trackVal.textContent = `${percent}%`
+                        trackVal.style = 'color: red;'
+                    }
+                    if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                        trackVal.textContent = `${percent}%`
+                        trackVal.style = 'color: green;'
+                    }
+                }
+                if(indicator == 'UNEMPLOYMENT'){
+                    let trackName = document.getElementById("p2-name")
+                    let trackPrev = document.getElementById("p2-prev")
+                    let trackVal = document.getElementById("p2-val")
+        
+                    trackName.textContent = 'Unemployment Rates'
+                    trackPrev.textContent = (previous).toFixed(2)
+                    if(Math.sign(percent) == -1){
+                        trackVal.textContent = `${percent}%`
+                        trackVal.style = 'color: red;'
+                    }
+                    if(Math.sign(percent) == 1 || Math.sign(percent) == 0){
+                        trackVal.textContent = `${percent}%`
+                        trackVal.style = 'color: green;'
+                    }
+                }
+    
+            }
         }
         
-        return (parseFloat(close)).toFixed(2)
+
+        
+        
+        return (parseFloat(val)).toFixed(2)
     })
 }
 
@@ -495,7 +509,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             // ======Indicators loading========= //
             else if(name == 'Indicators'){
                 indicators('INFLATION', cardVal1, cardName1)
-
+                indicators('UNEMPLOYMENT', cardVal2, cardName2)
+                indicators('KEN', cardVal3, cardName3)
             }
             else if(name == 'Analytics'){
 
