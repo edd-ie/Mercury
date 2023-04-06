@@ -78,6 +78,8 @@ The ```indictators()``` function is responsible for fetching data from the Alpha
     indicator - identifies the specific indicator to be displayed on the cards
     Card - specifies which card the details will be posted
     Name - specifies which name is to be displayed on the cards
+    ,ndjfnvjdnfjvbdhfb,ndjfnvjdnfjvbdhfb
+,ndjfnvjdnfjvbdhfb,ndjfnvjdnfjvbdhfb
 
 ## <a id="Sources">Sources()</a>
 The project fetches data from outside sources using **APIs** and widgets
