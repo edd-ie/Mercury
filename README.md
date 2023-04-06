@@ -2,16 +2,17 @@
 The Mercury website is a simple webpage that displays the latest prices of various commodities. It uses the Alpha Vantage API to fetch data and display it on the page.
 
 ## Table of Contents
-1. **Getting started**
-2. **Usage**
-3. **Code**
-    - **crypto()**
-    - **stocks()**
-    - **commodities()**
-    - **indictators()**
-4. **Sources**
+1. [Getting started](#Getting-started)
+2. [Usage](#Usage)
+3. [Code](#Code)
+    - [Crypto()](#crypto)
+    - [Stocks()](#stocks)
+    - [Commodities()](#commodities)
+    - [Indictators()](#indictators)
+4. [Sources](#Sources)
 
-## Getting started
+
+## <a id="Getting-started">Getting started</a> 
 To access **Mercury** website, simply click this url:
 [Mercury website](https://edd-ie.github.io/Mercury)
 
@@ -22,7 +23,7 @@ To access **Mercury** website, simply click this url:
 
 Then, open the *index.html* file in your web browser to view the website.
 
-## Usage
+## <a id="Usage">Usage</a>
 The Mercury website displays the latest prices of various commodities, including crude oil, copper, and natural gas. The prices are updated on a monthly basis and are fetched from the Alpha Vantage API.
 
 To view the current **crypto** prices, click on it's tab on from the left pannel on the site. It will source the data for prices for *BTC, Ethereum & Tether* and display it on the cards UI. 
@@ -42,43 +43,43 @@ Below the cards the site click on the details to views previous prices and perce
 
 Below the left panel, user can view **Market closing/Openning** times for various markets: *New york stock exchange, Nairobi stock exchange, Hong Kong stock exchange & london stock exchange*
 
-## Code
+## <a id="Code">Code</a>
 The JavaScript code for the Mercury website is included in the index.js file. The file contains various functions: ```crypto()```, ```stocks()```, ```commodities()```, ```indictators()```.
 
-### crypto()
+### <a id="crypto">crypto()</a>
 The ```crypto()``` function is responsible for crypto currencies fetching data from the Alpha Vantage API and displaying it on the page. It takes four arguments: *coin, cash, card, name*.
 
     Coin - identifies the specific crypto currency to be compared
     Cash - identifies the specific currcurrencyent to be compared 
     Card - specifies which card the details will be posted
     Name - specifies which name is to be displayed on the cards
-### forex()
+### <a id="forex">forex()</a>
 The ```forex()``` function is responsible for fetching currency data from the Alpha Vantage API and displaying it on the page. It takes four arguments: *from, to, card, name*.
 
     from - identifies the specific buy currency to be compared
     to - identifies the specific sell currency to be compared 
     Card - specifies which card the details will be posted
     Name - specifies which name is to be displayed on the cards
-### stocks()
-The ```forex()``` function is responsible for fetching currency data from the Alpha Vantage API and displaying it on the page. It takes three arguments: *stock, card, namee*.
+### <a id="stocks">stocks()</a>
+The ```stocks()``` function is responsible for fetching currency data from the Alpha Vantage API and displaying it on the page. It takes three arguments: *stock, card, namee*.
 
     stock - identifies the specific stock to be displayed on the cards
     Card - specifies which card the details will be posted
     Name - specifies which name is to be displayed on the cards
-### commodities()
+### <a id="commodities">commodities()</a>
 The ```commodities()``` function is responsible for fetching commodites data from the Alpha Vantage API and displaying it on the page. It takes three arguments: *goods, card, name*.
 
     good - identifies the specific goods to be displayed on the cards
     Card - specifies which card the details will be posted
     Name - specifies which name is to be displayed on the cards
-### indictators()
+### <a id="indictators">indictators()</a>
 The ```indictators()``` function is responsible for fetching data from the Alpha Vantage API and displaying it on the page. It takes foue arguments: *indicator, card, name*.
 
     indicator - identifies the specific indicator to be displayed on the cards
     Card - specifies which card the details will be posted
     Name - specifies which name is to be displayed on the cards
 
-## Sources
+## <a id="Sources">Sources()</a>
 The project fetches data from outside sources using **APIs** and widgets
 * Data source - [Alpha Vantage api](https://www.alphavantage.co/documentation/)
 * Widget source - [Trading view](http://tradingview.com/)
