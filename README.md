@@ -1,5 +1,5 @@
 # [MERCURY](https://edd-ie.github.io/Mercury)
-The Mercury website is a simple webpage that displays the latest prices of various commodities. It uses the Alpha Vantage API to fetch data and display it on the page.
+The web app that displays the latest prices of various commodities. It uses the Alpha Vantage API to fetch data and display it on the page.
 
 ## Table of Contents
 1. [Getting started](#Getting-started)
