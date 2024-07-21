@@ -5,7 +5,7 @@ The web app that displays the latest prices of various commodities. It uses the 
 1. [Getting started](#Getting-started)
 2. [Usage](#Usage)
 3. [Code](#Code)
-    - [Crypto()](#crypto)
+    - [Crypto currencies()](#crypto)
     - [Stocks()](#stocks)
     - [Commodities()](#commodities)
     - [Indictators()](#indictators)
